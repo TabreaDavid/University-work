@@ -13,26 +13,29 @@ import math
 #
 
 
+REAL_PART_INDEX = 0
+IMAGINARY_PART_INDEX = 1
+
 def create_complex_number_list(real_part, imaginary_part):
     return [real_part, imaginary_part]
 
 def get_real_part_list(complex_number):
-    return complex_number[0]
+    return complex_number[REAL_PART_INDEX]
 
 def set_real_part_list(complex_number, real_part):
-    complex_number[0] = real_part
+    complex_number[REAL_PART_INDEX] = real_part
 
 def get_imaginary_part_list(complex_number):
-    return complex_number[1]
+    return complex_number[IMAGINARY_PART_INDEX]
 
 def set_imaginary_part_list(complex_number, imaginary_part):
-    complex_number[1] = imaginary_part
+    complex_number[IMAGINARY_PART_INDEX] = imaginary_part
 
-def str_complex_list(complex_number):
-    return str(complex_number[0]) + " + " + str(complex_number[1]) + "i"
+def to_string_complex_list(complex_number):
+    return str(complex_number[REAL_PART_INDEX]) + " + " + str(complex_number[IMAGINARY_PART_INDEX]) + "i"
 
 def modulus_list(complex_number):
-    return math.sqrt(complex_number[0] * complex_number[0] + complex_number[1] * complex_number[1])
+    return math.sqrt(complex_number[REAL_PART_INDEX] ** 2 + complex_number[IMAGINARY_PART_INDEX] ** 2)
 
 #
 # Write below this comment
@@ -42,26 +45,25 @@ def modulus_list(complex_number):
 # -> Functions communicate using input parameters and their return values
 #
 
-def create_complex_number_dict(real_part, imaginary_part):
+def create_complex_number_dictionary(real_part, imaginary_part):
     return {'real': real_part, 'imaginary': imaginary_part}
 
-def get_real_part_dict(complex_number):
+def get_real_part_dictionary(complex_number):
     return complex_number['real']
 
-def set_real_part_dict(complex_number, real_part):
+def set_real_part_dictionary(complex_number, real_part):
     complex_number['real'] = real_part
 
-def get_imaginary_part_dict(complex_number):
+def get_imaginary_part_dictionary(complex_number):
     return complex_number['imaginary']
 
-def set_imaginary_part_dict(complex_number, imaginary_part):
+def set_imaginary_part_dictionary(complex_number, imaginary_part):
     complex_number['imaginary'] = imaginary_part
 
-def str_complex_dict(complex_number):
+def to_string_complex_dictionary(complex_number):
     return str(complex_number['real']) + " + " + str(complex_number['imaginary']) + "i"
 
-
-def modulus_dict(complex_number):
+def modulus_dictionary(complex_number):
     return math.sqrt(complex_number['real'] * complex_number['real'] + complex_number['imaginary'] * complex_number['imaginary'])
 
 #
@@ -77,8 +79,9 @@ def longest_subarray_distinct(numbers):
     start_index = 0
     visited_numbers = {}
     maximum_subarray = []
-
-    for end_index, complex_number in enumerate(numbers):
+    end_index = 0
+    while end_index < len(numbers):
+        complex_number = numbers[end_index]
         complex_number_tuple = tuple(complex_number)
 
         if complex_number_tuple in visited_numbers and visited_numbers[complex_number_tuple] >= start_index:
@@ -91,6 +94,8 @@ def longest_subarray_distinct(numbers):
             maximum_length = current_length
             maximum_subarray = numbers[start_index:end_index + 1]
 
+        end_index += 1
+
     return maximum_subarray
 
 
@@ -98,7 +103,7 @@ def longest_subarray_distinct(numbers):
 def longest_subarray_same_modulus(numbers):
     maximum_length = 1
     current_length = 1
-    maximum_subarray = numbers[:1]
+    maximum_subarray_same_modulus = numbers[:1]
 
     for i in range(1, len(numbers)):
         if modulus_list(numbers[i]) == modulus_list(numbers[i - 1]):
@@ -106,13 +111,13 @@ def longest_subarray_same_modulus(numbers):
         else:
             if current_length > maximum_length:
                 maximum_length = current_length
-                maximum_subarray = numbers[i - current_length:i]
+                maximum_subarray_same_modulus = numbers[i - current_length:i]
             current_length = 1
 
     if current_length > maximum_length:
-        maximum_subarray = numbers[len(numbers) - current_length:]
+        maximum_subarray_same_modulus = numbers[len(numbers) - current_length:]
 
-    return maximum_subarray
+    return maximum_subarray_same_modulus
 
 #
 # Write below this comment
@@ -128,11 +133,11 @@ def read_complex_number():
     return create_complex_number_list(real_part, imaginary_part)
 
 def display_complex_number(complex_number):
-    print("Complex number:", str_complex_list(complex_number))
+    print("Complex number:", to_string_complex_list(complex_number))
 
 def display_complex_numbers(complex_numbers):
     for complex_number in complex_numbers:
-        print(str_complex_list(complex_number))
+        print(to_string_complex_list(complex_number))
 
 def display_menu():
     print("\nMenu:")
@@ -143,35 +148,36 @@ def display_menu():
     print("5. Exit")
 
 def main():
-    complex_numbers = [
-        create_complex_number_list(1, 2), create_complex_number_list(2, 3), create_complex_number_list(3, 4),
-        create_complex_number_list(1, 2), create_complex_number_list(5, 6), create_complex_number_list(7, 8),
-        create_complex_number_list(9, 0), create_complex_number_list(10, 11), create_complex_number_list(5, 6),
-        create_complex_number_list(1, 2)
-    ]
+    complex_numbers = []
 
     while True:
         display_menu()
         option = int(input("Choose an option: "))
 
-        if option == 1:
+        READ_COMPLEX_NUMBER = 1
+        DISPLAY_COMPLEX_NUMBERS = 2
+        LONGEST_DISTINCT_SUBARRAY = 3
+        LONGEST_SUBARRAY_SAME_MODULUS = 4
+        EXIT = 5
+
+        if option == READ_COMPLEX_NUMBER:
             complex_numbers.append(read_complex_number())
 
-        elif option == 2:
+        elif option == DISPLAY_COMPLEX_NUMBERS:
             print("\nAll complex numbers:")
             display_complex_numbers(complex_numbers)
 
-        elif option == 3:
+        elif option == LONGEST_DISTINCT_SUBARRAY:
             subarray_distinct = longest_subarray_distinct(complex_numbers)
             print("\nLongest subarray of distinct numbers:")
             display_complex_numbers(subarray_distinct)
 
-        elif option == 4:
+        elif option == LONGEST_SUBARRAY_SAME_MODULUS:
             subarray_same_modulus = longest_subarray_same_modulus(complex_numbers)
             print("\nLongest subarray with the same modulus:")
             display_complex_numbers(subarray_same_modulus)
 
-        elif option == 5:
+        elif option == EXIT:
             print("Goodbye!")
             break
         else:
