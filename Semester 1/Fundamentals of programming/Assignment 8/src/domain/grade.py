@@ -7,8 +7,4 @@ class Grade:
         self.discipline = Discipline(disciplineId, disciplineName)
         self.gradeValue = gradeValue
 
-    def __str__(self):
-        # return f"{self.gradeValue}"
-         return f'{self.student} | {self.discipline} | Grade: {self.gradeValue}'
-        # return f'Student ID: {self.student.id}| Student name: {self.student.name} | Discipline ID: {self.discipline.id} | Discipline name: {self.discipline.name} | Grade: {self.gradeValue}'
 

@@ -13,3 +13,10 @@ class DisciplineServices:
 
     def listDisciplinesService(self):
         self.disciplineRepository.repositoryListDisciplines()
+
+    def searchDisciplineService(self, disciplineId):
+        for discipline in self.disciplineRepository.disciplines:
+            if discipline.id == disciplineId:
+                return discipline.name
+
+        return 'Discipline not found'

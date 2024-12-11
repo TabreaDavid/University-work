@@ -10,6 +10,14 @@ class Student:
     @property
     def name(self):
         return self.studentName
+
+    @id.setter
+    def id(self, newStudentId):
+        self.studentId = newStudentId
+
+    @name.setter
+    def name(self, newStudentName):
+        self.studentName = newStudentName
     
     def __str__(self):
         return f'Student ID: {self.id} | Student name: {self.name}'

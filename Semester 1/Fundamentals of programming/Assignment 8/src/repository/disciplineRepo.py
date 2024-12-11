@@ -1,5 +1,3 @@
-from faker.proxy import Faker
-from random import randint
 from src.domain.discipline import Discipline
 
 class DisciplineRepository:
@@ -19,11 +17,6 @@ class DisciplineRepository:
             if discipline.id == disciplineId:
                 self.disciplineList.remove(discipline)
 
-    def randomDisciplineNameGenerator(self):
-        disciplines = ['Math', 'Computer Science', 'Physics', 'Biology', 'Physical education', 'Chemistry']
-        disciplineIndex = randint(0, 5)
-        return disciplines[disciplineIndex]
-
     def isIdAvailable(self, checkedId):
         for discipline in self.disciplineList:
             if discipline.id == checkedId:
@@ -31,16 +24,17 @@ class DisciplineRepository:
         return True
 
     def generateDisciplines(self):
-        faker = Faker()
-        for i in range(20):
-            disciplineId = randint(1,300)
-            while not self.isIdAvailable(disciplineId):
-                disciplineId = randint(1, 300)
-
-            disciplineName = self.randomDisciplineNameGenerator()
-
-            newDiscipline = Discipline(disciplineId, disciplineName)
+        disciplines = [
+            'Math', 'Computer Science', 'Physics', 'Biology', 'Physical education',
+            'Chemistry', 'History', 'Geography', 'Economics', 'Literature',
+            'Philosophy', 'Art', 'Music', 'Drama', 'Psychology',
+            'Sociology', 'Political Science', 'Environmental Science',
+            'Statistics', 'Astronomy'
+        ]
+        for disciplineId in range(20):
+            newDiscipline = Discipline(disciplineId, disciplines[disciplineId])
             self.repositoryAddDiscipline(newDiscipline)
+
 
     def repositoryListDisciplines(self):
         for discipline in self.disciplineList:

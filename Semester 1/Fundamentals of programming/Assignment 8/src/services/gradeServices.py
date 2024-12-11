@@ -23,6 +23,12 @@ class GradeServices:
         newGrade = Grade(studentId, chosenStudent, disciplineId, chosenDiscipline, gradeValue)
         self.gradeRepository.repositoryAddGrade(newGrade)
 
+    def removeGradeByStudentService(self, studentId):
+        self.gradeRepository.repositoryRemoveGradeByStudent(studentId)
+
+    def removeGradeByDisciplineService(self, disciplineId):
+        self.gradeRepository.repositoryRemoveGradeByDiscipline(disciplineId)
+
     def listGradesService(self):
         self.gradeRepository.repositoryListGrades()
 

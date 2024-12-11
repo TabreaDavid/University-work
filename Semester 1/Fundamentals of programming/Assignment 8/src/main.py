@@ -19,5 +19,4 @@ def main():
 
     console.runUi()
 
-
 main()

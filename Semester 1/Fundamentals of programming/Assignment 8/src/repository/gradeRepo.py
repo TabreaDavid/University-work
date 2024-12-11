@@ -11,4 +11,15 @@ class GradeRepository:
 
     def repositoryListGrades(self):
         for grade in self.gradeList:
-            print(grade)
+            print(f'{grade.student.name} | {grade.discipline.name} | Grade: {grade.gradeValue}')
+
+    def repositoryRemoveGradeByDiscipline(self, disciplineId):
+        for grade in self.gradeList:
+            if grade.discipline.id == disciplineId:
+                self.gradeList.remove(grade)
+
+    def repositoryRemoveGradeByStudent(self, studentId):
+        for grade in self.gradeList:
+            if grade.student.id == studentId:
+                self.gradeList.remove(grade)
+

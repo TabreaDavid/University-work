@@ -18,7 +18,7 @@ class Console:
 
     @staticmethod
     def printMenu():
-        print("1. Add student")
+        print("\n1. Add student")
         print("2. Remove student by ID")
         print("3. Display students")
         print("4. Add discipline")
@@ -53,6 +53,19 @@ class Console:
 
     def displayGrades(self):
         self.gradeServices.listGradesService()
+
+    def searchStudentUi(self, studentId):
+        print(self.studentServices.searchStudentService(studentId))
+
+    def searchDisciplineUi(self, disciplineId):
+        print(self.disciplineServices.searchDisciplineService(disciplineId))
+
+    def removeGradeByDisciplineUi(self, disciplineId):
+        self.gradeServices.removeGradeByDisciplineService(disciplineId)
+
+    def removeGradeByStudentUi(self, studentId):
+        self.gradeServices.removeGradeByStudentService(studentId)
+
     def runUi(self):
         while True:
             Console.printMenu()
@@ -66,6 +79,7 @@ class Console:
             elif userChoice == REMOVE_STUDENT:
                 removedStudentId = int(input("Enter student ID: "))
                 self.removeStudentUi(removedStudentId)
+                self.removeGradeByStudentUi(removedStudentId)
 
             elif userChoice == DISPLAY_STUDENTS:
                 self.displayStudents()
@@ -78,6 +92,7 @@ class Console:
             elif userChoice == REMOVE_DISCIPLINE:
                 removedDisciplineId = int(input("Enter discipline id: "))
                 self.removeDisciplineUi(removedDisciplineId)
+                self.removeGradeByDisciplineUi(removedDisciplineId)
 
             elif userChoice == DISPLAY_DISCIPLINES:
                 self.displayDisciplines()
@@ -91,10 +106,18 @@ class Console:
             elif userChoice == DISPLAY_GRADES:
                 self.displayGrades()
 
+            elif userChoice == SEARCH_STUDENT:
+                studentId = int(input("Enter student ID: "))
+                self.searchStudentUi(studentId)
+
+            elif userChoice == SEARCH_DISCIPLINE:
+                disciplineId = int(input('Enter discipline ID: '))
+                self.searchDisciplineUi(disciplineId)
+
             elif userChoice == EXIT:
                 break
 
-            else: print("Your option is not in the menu!")
+            else: print("\nYour option is not in the menu!\n")
 
 
 
