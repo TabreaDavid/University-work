@@ -1,0 +1,6 @@
+Andrei|Strada Victoriei|15|95|105|false
+Cristina|Calea Dorobantilor|23|110|95|false
+Florin|Bulevardul Magheru|7|105|100|true
+Daniela|Strada Amzei|42|98|102|false
+Nicolae|Strada Franceza|18|205|145|false
+Simona|Calea Victoriei|31|195|155|true

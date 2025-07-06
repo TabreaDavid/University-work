@@ -1,0 +1,8 @@
+Ion|100|100|50|Strada Victoriei|Calea Dorobantilor|Bulevardul Magheru|Strada Amzei
+Maria|200|150|45|Strada Franceza|Calea Victoriei|Bulevardul Aviatorilor|Strada Polona
+Gheorghe|300|200|60|Strada Stirbei Voda|Calea Plevnei|Bulevardul Timisoara|Strada Grivitei
+Ana|150|250|55|Strada Academiei|Calea Calarasilor|Bulevardul Unirii|Strada Lipscani
+
+
+
+
