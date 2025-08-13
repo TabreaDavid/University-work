@@ -5,32 +5,32 @@ This repository contains the relevant academic projects during my studies.
 ## Courses featured:
 
 ### Semester 1
-#### Fundamentals of Programming
+#### Fundamentals of Programming 🐍
 **Language:** Python
 
 This course focuses on building strong programming foundations using Python. I built console-based apps and games with user menus
 
 ### Semester 2
 
-#### Data Structures and Algorithms
+#### Data Structures and Algorithms 🧮
 **Language:** C++
 
 Implementation of fundamental data structures: queue, stack and multimap
 
-#### Graph Algorithms
+#### Graph Algorithms 🕸️
 **Language:** Python
 
 Graph theory algorithms implementations
 
-#### Object Oriented Programming
+#### Object Oriented Programming 🧩
 **Language:** C/C++
 
-Fundamental concepts of OOP and GUI programming using the QT Framework
+Fundamental concepts of OOP and GUI programming using the Qt framework
 
-#### Operating Systems
+#### Operating Systems 🐧
 **Language:** Shell and C
 
-Linux fundamentals, shell scriptsm, POSIX processes and threads programming
+Linux fundamentals, shell scripts, POSIX processes and threads programming
 
 ### Skills developed:
 - Algorithm design and analysis
