@@ -32,7 +32,7 @@ Fundamental concepts of OOP and GUI programming using the Qt framework
 
 Linux fundamentals, shell scripts, POSIX processes and threads programming
 
-### Skills developed:
+### *Skills developed*:
 - Algorithm design and analysis
 - Code organization and modularity
 - Testing and debugging techniques
