@@ -13,22 +13,22 @@ This course focuses on building strong programming foundations using Python. I b
 ## Semester 2
 
 ### Data Structures and Algorithms 🧮
-**Language:** C++
+***Language:*** C++
 
 Implementation of fundamental data structures: queue, stack and multimap
 
 ### Graph Algorithms 🕸️
-**Language:** Python
+***Language:*** Python
 
 Graph theory algorithms implementations
 
 ### Object Oriented Programming 🧩
-**Language:** C/C++
+***Language:*** C/C++
 
 Fundamental concepts of OOP and GUI programming using the Qt framework
 
 ### Operating Systems 🐧
-**Language:** Shell and C
+***Language:*** Shell and C
 
 Linux fundamentals, shell scripts, POSIX processes and threads programming
 
