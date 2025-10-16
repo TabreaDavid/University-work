@@ -2,8 +2,6 @@
 
 This repository contains the relevant academic projects during my studies.
 
-## Courses featured:
-
 ## Semester 1
 ### Fundamentals of Programming 🐍
 **Language:** Python
