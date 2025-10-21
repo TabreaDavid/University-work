@@ -85,19 +85,6 @@ CREATE TABLE Orders
     FOREIGN KEY (PromotionID) REFERENCES Promotions(PromotionID)
 );
 
-CREATE TABLE Orders
-(
-    OrderID INT PRIMARY KEY IDENTITY(1,1),
-    CustomerID INT NOT NULL,
-    OrderDate DATETIME2 DEFAULT GETDATE(),
-    OrderState NVARCHAR(50) DEFAULT 'Pending',
-    TotalAmount Decimal(12, 2) NOT NULL,
-    PromotionID INT,
-    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
-    FOREIGN KEY (ShippingAddressID) REFERENCES Address(AddressID),
-    FOREIGN KEY (ShipperID) REFERENCES Shippers(ShipperID),
-    FOREIGN KEY (PromotionID) REFERENCES Promotions(PromotionID)
-)
 
 CREATE TABLE OrderDetails
 (
