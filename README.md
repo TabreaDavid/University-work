@@ -13,3 +13,6 @@ This repository contains the relevant academic projects during my studies.
 🧩 **Object Oriented Programming**: C++ OOP and GUI development using the Qt Framework
 
 🐧 **Operating Systems**: Linux, Bash, POSIX processes and threads programming
+
+##Semester 3
+☕ **Advanced Programming Methods**: Java programming using MVC, JavaFX
