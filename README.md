@@ -17,3 +17,5 @@ This repository contains the relevant academic projects during my studies.
 ## Semester 3
 
 ☕ **Advanced Programming Methods**: Java programming using MVC, JavaFX
+
+💾 **Databases**: Basic SQL, SQL Server
