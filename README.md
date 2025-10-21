@@ -14,5 +14,6 @@ This repository contains the relevant academic projects during my studies.
 
 🐧 **Operating Systems**: Linux, Bash, POSIX processes and threads programming
 
-##Semester 3
+## Semester 3
+
 ☕ **Advanced Programming Methods**: Java programming using MVC, JavaFX
