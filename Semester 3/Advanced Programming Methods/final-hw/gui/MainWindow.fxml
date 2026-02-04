@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="gui.MainWindowController" 
+      spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Number of PrgStates:"/>
+        <TextField fx:id="nrPrgStatesTextField" editable="false" prefWidth="100"/>
+    </HBox>
+    
+    <HBox spacing="10" VBox.vgrow="ALWAYS">
+
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Heap Table"/>
+            <TableView fx:id="heapTableView" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="heapAddressColumn" text="Address" prefWidth="100"/>
+                    <TableColumn fx:id="heapValueColumn" text="Value" prefWidth="200"/>
+                </columns>
+            </TableView>
+            
+
+            <Label text="Output"/>
+            <ListView fx:id="outListView" prefHeight="100"/>
+            
+
+            <Label text="File Table"/>
+            <ListView fx:id="fileTableListView" prefHeight="80"/>
+        </VBox>
+        
+
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+
+            <Label text="PrgState IDs"/>
+            <ListView fx:id="prgStateListView" prefHeight="80"/>
+            
+
+            <Label text="Symbol Table"/>
+            <TableView fx:id="symTableView" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="symVarNameColumn" text="Variable" prefWidth="100"/>
+                    <TableColumn fx:id="symValueColumn" text="Value" prefWidth="200"/>
+                </columns>
+            </TableView>
+            
+
+            <Label text="Execution Stack"/>
+            <ListView fx:id="exeStackListView" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </HBox>
+    
+    <HBox alignment="CENTER">
+        <Button text="Run One Step" onAction="#handleRunOneStep" 
+                style="-fx-font-size: 14px; -fx-padding: 10 20;"/>
+    </HBox>
+</VBox>
