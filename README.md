@@ -24,4 +24,4 @@ This repository contains the relevant academic projects during my studies.
 
 ## Semester 4
 
-</> **Web Programming: HTML/CSS, JS (Node, Angular, JQuery), PHP, JSP, .NET
+`</>` **Web Programming**: HTML/CSS, JS (Node, Angular, JQuery), PHP, JSP, .NET
