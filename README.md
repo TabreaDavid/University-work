@@ -21,3 +21,7 @@ This repository contains the relevant academic projects during my studies.
 💾 **Databases**: SQL, SQL Server
 
 🌐 **Computer Networks**: Socket programming (TCP, UDP), OSI, TCP/IP, Cisco Packet Tracer
+
+## Semester 4
+
+`</>` **Web Programming**: HTML/CSS, JS (Node, Angular, JQuery), PHP, JSP, .NET
